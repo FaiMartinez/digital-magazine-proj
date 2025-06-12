@@ -31,7 +31,7 @@ const getBackgroundStyle = (isVisible, isHovered) => ({
 // No global styles needed with this approach
 
 import { heroData } from '../data/hero';
-import { articles } from '../data/articles';
+import articles from '../data/articles';
 
 const styles = {
   header: {

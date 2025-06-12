@@ -75,8 +75,7 @@ export default function Article2() {
         <p>Estonia's digital government is powered by X-Road, an open-source platform that connects private and public databases. The system ensures transparency by logging every data request, making it traceable and accountable. Over 25 countries are now exploring or using X-Road, including Finland and Namibia <b>(Hirdaramani, 2023)</b>.</p>
       </div>
 
-      {/* Emotion Poll Section */}
-      <EmotionPoll articleId="article-2" />
+
       
       {/* Part 2 Content */}
       <div className="article-content">
@@ -90,7 +89,8 @@ export default function Article2() {
         <p>Launched in 2020, Diia is Ukraine’s all-in-one e-government app. Ukrainians use it to pay taxes, apply for aid, and access government services. During wartime, it even served as a tool for national coordination. With over 22 million users, Diia shows how digital governance can be resilient and citizen-centered <b>(Ingram & Vora, 2024).</b></p>
         
       </div>
-
+      {/* Emotion Poll Section */}
+      <EmotionPoll articleId="article-2" />
       <SectionDivider />
 
       {/* Part 3 Content */}
@@ -122,19 +122,6 @@ Japan is third with an 88.8 percent score, making it the leading Asian country i
       <h3>Global Reach and Key Trends</h3>
       <p>The United States is the top American country, ranking eleventh with a score of 76.2 percent. China holds a score of 73.1 percent, though some processes like visa applications still require an in-person step. The most commonly digitized services across all 25 countries are individual and company registration, tax payments, and digital signatures. Despite challenges, the development of e-government continues to evolve, driven by the significant improvements it brings to public services. <b>(Smart City Expo World Congress, 2025)</b></p>
     </div>
-
-      <SectionDivider />
-
-      <div className="article-content">
-        <p>In an increasingly hyperconnected world, the shift to digital public services has become a cornerstone of modern governance, promising greater efficiency and transparency. This digital transformation not only cuts operational costs but also saves valuable time for the public, who can complete procedures from home. A recent study evaluated nine key online services—including e-residency, passport renewal, and online voting—to rank the top 25 countries in e-government.</p>
-        <img src="images/articles/article2/scewc-top-countries-e-government_1.png" alt="Top Countries E-Government" />
-        <h3>The Leaders of the Pack</h3>
-        <p>The United Kingdom emerges as the global leader, with an e-government score of 95.3 percent. Through its centralized portal, www.gov.uk, citizens can easily access all services. The UK has digitized nearly all analyzed services, with the exceptions being e-residency and online voting.</p>
-        <p>New Zealand ranks second with a score of 92.1 percent, providing citizens with a wide range of public services through its RealMe system. While e-residency is not yet implemented, company registration can be completed within 24 hours.</p>
-        <p>Japan is third with an 88.8 percent score, making it the leading Asian country in e-government. Japan accelerated its digitization efforts following the pandemic using its "My Number" system.</p>
-        <h3>European and Asian Nations Dominate</h3>
-        <p>European and Asian countries fill the remaining top positions. The Netherlands and Denmark rank just ahead of Singapore and Saudi Arabia with scores around 84 percent. Saudi Arabia, in sixth position with a score of 84.2 percent, enables access to all online services via its Absher platform.</p>
-      </div>
 
       <SectionDivider />
       <HeartCounter articleId="article-2" />

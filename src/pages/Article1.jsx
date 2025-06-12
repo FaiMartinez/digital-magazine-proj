@@ -82,7 +82,7 @@ export default function Article1() {
       />
       
       {/* Related Articles Section */}
-      <RelatedArticles articleId="article-1" />
+      <RelatedArticles currentArticleId="article-1" />
     </ArticleLayout>
   );
 }

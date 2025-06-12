@@ -104,7 +104,7 @@ export default function Article3() {
       />
       
       {/* Related Articles Section */}
-      <RelatedArticles articleId="article-3" />
+      <RelatedArticles currentArticleId="article-3" />
     </ArticleLayout>
   );
 }

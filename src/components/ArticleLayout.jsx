@@ -1,27 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 export default function ArticleLayout({ title, children }) {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <ThemeToggle />
+      
+      <Link 
+        to="/" 
+        className={`back-link ${isScrolled ? 'scrolled' : ''}`}
+        onMouseOver={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--accent-hover)';
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.backgroundColor = 'var(--accent-color)';
+        }}
+      >
+        ← Back to Home
+      </Link>
+      
       <main className="article-container">
-        <Link 
-          to="/" 
-          className="back-link"
-          onMouseOver={(e) => {
-            e.currentTarget.style.color = 'var(--accent-hover)';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.color = 'var(--accent-color)';
-          }}
-        >
-          ← Back to Home
-        </Link>
-        
         <h1 className="article-title">{title}</h1>
-        
         {children}
       </main>
       
@@ -31,16 +42,34 @@ export default function ArticleLayout({ title, children }) {
           margin: 2rem auto;
           padding: 0 clamp(1rem, 5vw, 2rem);
           color: var(--text-color);
+          position: relative;
         }
         
         .back-link {
-          display: inline-block;
-          margin-bottom: 1.5rem;
-          color: var(--accent-color);
+          position: fixed;
+          top: 20px;
+          left: 20px;
+          background-color: var(--accent-color);
+          color: white;
+          padding: 10px 15px;
+          border-radius: 20px;
           text-decoration: none;
           font-weight: 600;
-          font-size: 0.95rem;
-          transition: color 0.2s;
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+          z-index: 1000;
+          opacity: 0;
+          transform: translateX(-100%);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-link.scrolled {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        
+        .back-link:hover {
+          transform: translateX(0) scale(1.05);
         }
         
         .article-title {

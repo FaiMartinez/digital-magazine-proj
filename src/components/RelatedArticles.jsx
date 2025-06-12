@@ -1,8 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import articlesData from '../data/articles';
 
 export default function RelatedArticles({ currentArticleId }) {
+  const navigate = useNavigate();
+  
+  // Handle article click
+  const handleArticleClick = (articleId) => {
+    // Navigate to the article
+    navigate(`/${articleId}`);
+    // Scroll to top after navigation
+    window.scrollTo(0, 0);
+  };
+
   // Filter out the current article and get up to 3 related articles
   const relatedArticles = articlesData
     .filter(article => article.id !== currentArticleId)
@@ -57,15 +67,19 @@ export default function RelatedArticles({ currentArticleId }) {
               marginBottom: '0.5rem',
               lineHeight: 1.3
             }}>
-              <Link 
-                to={`/${article.id}`}
+              <button
+                onClick={() => handleArticleClick(article.id)}
                 style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: 0,
                   color: 'var(--text-color)',
                   textDecoration: 'none',
-                  transition: 'color 0.2s',
-                  ':hover': {
-                    color: 'var(--accent-color)'
-                  }
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  width: '100%',
+                  font: 'inherit',
+                  transition: 'color 0.2s'
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.color = 'var(--accent-color)';
@@ -75,7 +89,7 @@ export default function RelatedArticles({ currentArticleId }) {
                 }}
               >
                 {article.title}
-              </Link>
+              </button>
             </h4>
             <p style={{
               color: 'var(--text-secondary)',
