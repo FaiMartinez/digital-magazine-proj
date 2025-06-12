@@ -1,32 +1,10 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
-const articles = [
-  { 
-    id: 'article-1', 
-    title: 'The Future of Digital Publishing',
-    excerpt: 'Explore the latest trends in digital publishing'
-  },
-  { 
-    id: 'article-2', 
-    title: 'How to Write Like a Pro',
-    excerpt: 'Tips and techniques for professional writing'
-  },
-  { 
-    id: 'article-3', 
-    title: 'Designing for Readability',
-    excerpt: 'Improve your content with better design'
-  },
-  { 
-    id: 'article-4', 
-    title: 'Building Your Audience',
-    excerpt: 'Grow your readership effectively'
-  },
-];
+import { Link } from 'react-router-dom';
+import articlesData from '../data/articles';
 
 export default function RelatedArticles({ currentArticleId }) {
   // Filter out the current article and get up to 3 related articles
-  const relatedArticles = articles
+  const relatedArticles = articlesData
     .filter(article => article.id !== currentArticleId)
     .slice(0, 3);
   

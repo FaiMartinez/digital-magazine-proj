@@ -1,25 +1,25 @@
 {
-  "name": "digital-magazine",
+  "name": "the-contemporary-world",
   "version": "1.0.0",
   "private": true,
   "type": "module",
   "description": "A modern, responsive digital magazine built with React and Firebase",
   "keywords": ["react", "firebase", "magazine", "pwa", "responsive"],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Jiro <fai.martinez@gmail.com>",
   "license": "MIT",
-  "homepage": "https://your-project-url.web.app",
+  "homepage": "https://digital-magazine-proj.web.app",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/digital-magazine.git"
+    "url": "https://github.com/FaiMartinez/digital-magazine-proj.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/digital-magazine/issues"
+    "url": "https://github.com/FaiMartinez/digital-magazine-proj/issues"
   },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx",
+    "lint": "eslint . --ext .js,.jsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,json,css}\"",
     "prepare": "husky install",
     "test": "vitest",
