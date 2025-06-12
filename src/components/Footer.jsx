@@ -36,8 +36,8 @@ export default function Footer() {
             <p>Writer</p>
           </div>
           <div>
-            <p style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Fallison Bobila</p>
-            <p>Writer</p>
+            <p style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Forest Allison Bobila</p>
+            <p>Assistant Writer</p>
           </div>
         </div>
         

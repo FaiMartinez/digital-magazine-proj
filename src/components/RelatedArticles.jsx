@@ -35,70 +35,78 @@ export default function RelatedArticles({ currentArticleId }) {
       </h3>
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
         gap: '1.5rem'
       }}>
         {relatedArticles.map((article) => (
           <article 
             key={article.id} 
             style={{
-              background: 'var(--card-bg)',
               borderRadius: '8px',
-              padding: '1.25rem',
-              boxShadow: 'var(--card-shadow)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
-              transform: 'translateY(0)',
+              overflow: 'hidden',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
               ':hover': {
-                transform: 'translateY(-2px)',
-                boxShadow: '0 4px 12px var(--card-shadow)'
-              }
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-2px)';
-              e.currentTarget.style.boxShadow = '0 4px 12px var(--card-shadow)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'var(--card-shadow)';
+                transform: 'translateY(-5px)',
+                boxShadow: '0 8px 20px rgba(0,0,0,0.15)'
+              },
+              background: 'var(--card-bg)'
             }}
           >
-            <h4 style={{
-              fontSize: '1.1rem',
-              marginBottom: '0.5rem',
-              lineHeight: 1.3
-            }}>
-              <button
-                onClick={() => handleArticleClick(article.id)}
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  color: 'var(--text-color)',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  width: '100%',
-                  font: 'inherit',
-                  transition: 'color 0.2s'
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.color = 'var(--accent-color)';
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.color = 'var(--text-color)';
-                }}
-              >
-                {article.title}
-              </button>
-            </h4>
-            <p style={{
-              color: 'var(--text-secondary)',
-              fontSize: '0.9rem',
-              margin: 0,
-              lineHeight: 1.5
-            }}>
-              {article.excerpt}
-            </p>
+            <img 
+              src={article.image} 
+              alt={article.imageAlt}
+              style={{
+                width: '100%',
+                height: '200px',
+                objectFit: 'cover'
+              }}
+            />
+            <div style={{ padding: '1.5rem' }}>
+              <h4 style={{
+                fontSize: '1.25rem',
+                margin: '0 0 0.5rem 0',
+                color: 'var(--text-color)'
+              }}>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleArticleClick(article.id);
+                  }}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    color: 'var(--text-color)',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    width: '100%',
+                    font: 'inherit',
+                    fontSize: '1.25rem',
+                    margin: '0 0 0.5rem 0',
+                    fontWeight: '600',
+                    transition: 'color 0.2s'
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.color = 'var(--accent-color)';
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.color = 'var(--text-color)';
+                  }}
+                >
+                  {article.title}
+                </button>
+              </h4>
+              <p style={{
+                color: 'var(--text-secondary)',
+                fontSize: '0.95rem',
+                margin: 0,
+                lineHeight: 1.5
+              }}>
+                {article.excerpt}
+              </p>
+            </div>
           </article>
         ))}
       </div>

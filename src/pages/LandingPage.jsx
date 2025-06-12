@@ -189,52 +189,57 @@ export default function LandingPage() {
           }}
         />
         <div style={styles.heroContent}>
-          <div className="hero-content-inner" style={{
-            textTransform: 'uppercase',
-            letterSpacing: '2px',
-            fontSize: '1rem',
-            color: 'var(--primary-light)',
-            marginBottom: '1rem',
-            fontWeight: '500',
-            fontFamily: '"Space Grotesk", sans-serif'
-          }}>
-            The Future of Digital Governance
-          </div>
           <h1 style={{ 
             fontSize: '4.5rem', 
             margin: '0 0 1.5rem',
-            color: 'var(--text-light)',
+            color: '#ffffff',
             fontWeight: '700',
             lineHeight: '1.1',
-            textShadow: '0 2px 10px rgba(0,0,0,0.3)',
+            textShadow: '0 2px 10px rgba(0,0,0,0.5)',
             fontFamily: '"Orbitron", sans-serif',
             letterSpacing: '0.05em',
             textTransform: 'uppercase',
             wordWrap: 'break-word',
             overflowWrap: 'break-word',
+            whiteSpace: 'normal',
+            textAlign: 'center',
+            width: '100%',
+            boxSizing: 'border-box',
             ...subtitleStyle,
+            '@media (maxWidth: 992px)': {
+              fontSize: '2.8rem',
+              letterSpacing: '0.03em',
+              padding: '0 1rem',
+              margin: '0.5rem 0 1rem',
+              lineHeight: '1.3'
+            },
             '@media (maxWidth: 768px)': {
               fontSize: '2.2rem',
-              letterSpacing: '0.02em',
-              padding: '0 0.5rem',
+              letterSpacing: '0.03em',
+              padding: '0 1rem',
               margin: '0.5rem 0 1rem',
-              lineHeight: '1.2'
+              lineHeight: '1.3'
             },
             '@media (maxWidth: 480px)': {
-              fontSize: '1.8rem',
-              padding: '0 0.5rem',
-              margin: '0.5rem 0 1rem'
+              fontSize: '1.6rem',
+              padding: '0 1rem',
+              margin: '0.5rem 0 1rem',
+              letterSpacing: '0.02em',
+              whiteSpace: 'normal',
+              wordBreak: 'normal',
+              overflowWrap: 'break-word',
+              display: 'inline-block'
             }
           }}>
-            Navigating the Digital Frontier
+            Globalization of the Internet
           </h1>
           <p style={{ 
             fontSize: '1.5rem',
             maxWidth: '800px',
             margin: '0 auto 2.5rem',
-            color: 'var(--text-light-2)',
+            color: '#ffffff',
             lineHeight: '1.6',
-            textShadow: '0 1px 3px rgba(0,0,0,0.5)',
+            textShadow: '0 1px 3px rgba(0,0,0,0.7)',
             fontFamily: '"Space Grotesk", sans-serif',
             fontWeight: '500',
             letterSpacing: '0.3px',
@@ -247,7 +252,7 @@ export default function LandingPage() {
               padding: '0 1.5rem'
             }
           }}>
-            Exploring how technology is reshaping global governance, digital rights, and the future of international relations in an interconnected world.
+            Examining global divides, global governance, global interstate systems, and global media culture and how it affects our world.
           </p>
           <div style={{
             display: 'flex',
@@ -264,7 +269,6 @@ export default function LandingPage() {
           transform: 'translateX(-50%)',
           color: 'var(--text-light)',
           fontSize: '1.5rem',
-          animation: 'bounce 2s infinite',
           cursor: 'pointer',
           zIndex: 2,
           textShadow: '0 2px 4px rgba(0,0,0,0.3)',
