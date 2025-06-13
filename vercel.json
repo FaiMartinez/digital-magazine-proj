@@ -13,6 +13,14 @@
       "dest": "/assets/$1"
     },
     {
+      "src": "/images/(.*)",
+      "dest": "/images/$1"
+    },
+    {
+      "src": "/([^/]+\\.(?:jpg|jpeg|png|gif|svg|webp|ico|webmanifest|xml|txt))$",
+      "dest": "/$1"
+    },
+    {
       "src": "^/favicon.ico$",
       "dest": "/favicon.ico"
     },
